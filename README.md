@@ -81,7 +81,7 @@ The easiest way is Google Colab (free T4 GPU):
 1. Go to [colab.research.google.com](https://colab.research.google.com)
 2. Upload `ExplainabilityAudit.ipynb`
 3. Set runtime to GPU: Runtime → Change runtime type → T4 GPU
-4. Run Cell 1 to install dependencies, then run cells in order
+4. Run  1 to install dependencies, then run s in order
 5. Full run takes about 35 minutes on T4
 
 Alternatively, run `Desetty_Explainability_Audit_Experiment.py` in any Python environment with the dependencies below.
@@ -112,27 +112,27 @@ ExplainabilityAudit/
 
 ## What the code does, step by step
 
-**Cell 1** — installs dependencies
+** 1** — installs dependencies
 
-**Cell 2** — imports and setup (sets random seed for reproducibility)
+** 2** — imports and setup (sets random seed for reproducibility)
 
-**Cell 3** — loads MultiNLI government/slate genres from HuggingFace
+** 3** — loads MultiNLI government/slate genres from HuggingFace
 
-**Cell 4** — loads BGE-M3 via HuggingFace AutoModel, adds a lightweight classification head so LIME and SHAP can work with it
+** 4** — loads BGE-M3 via HuggingFace AutoModel, adds a lightweight classification head so LIME and SHAP can work with it
 
-**Cell 5** — defines `predict_proba`, the function that runs the model and returns class probabilities
+** 5** — defines `predict_proba`, the function that runs the model and returns class probabilities
 
-**Cell 6** — Experiment 1: stability. Generates perturbations, runs all three explanation methods, computes Spearman correlations
+** 6** — Experiment 1: stability. Generates perturbations, runs all three explanation methods, computes Spearman correlations
 
-**Cell 7** — Experiment 2: faithfulness. Keeps top-5 tokens from each method, measures confidence retention
+** 7** — Experiment 2: faithfulness. Keeps top-5 tokens from each method, measures confidence retention
 
-**Cell 8** — Experiment 3: audit readiness. Applies both thresholds, computes pass rates
+** 8** — Experiment 3: audit readiness. Applies both thresholds, computes pass rates
 
-**Cell 9** — Visualizations (three-panel figure saved as PNG)
+** 9** — Visualizations (three-panel figure saved as PNG)
 
-**Cell 10** — Prints the results table for the paper
+** 10** — Prints the results table for the paper
 
-**Cell 11** — Qualitative example showing one explanation per method
+** 11** — Qualitative example showing one explanation per method
 
 ---
 
@@ -152,6 +152,3 @@ If you use this code or find the framing useful, please cite:
 
 ---
 
-## Contact
-
-asleshadesetty@outlook.com
