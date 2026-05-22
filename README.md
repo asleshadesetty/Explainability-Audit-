@@ -152,6 +152,3 @@ If you use this code or find the framing useful, please cite:
 
 ---
 
-## Contact
-
-asleshadesetty@outlook.com
