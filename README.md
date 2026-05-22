@@ -6,7 +6,7 @@
 
 This repository contains the code and data for the paper:
 
-> Desetty, J.A. (2026). *Bridging the Deployment Gap: Lessons from NLP and Predictive Modeling in Production Healthcare and Insurance Systems.* Preprint.
+> Desetty, J.A. (2026). *Bridging the Deployment Gap: Lessons from NLP and Predictive Modeling in Production Healthcare and Insurance Systems.* Preprint. [GitHub](https://github.com/asleshadesetty/Explainability-Audit-)
 
 ---
 
@@ -36,9 +36,9 @@ I evaluate three explanation methods on a BGE-M3 retrieval model using MultiNLI 
 
 | Method | Stability | Faithfulness | Audit Ready |
 |--------|-----------|--------------|-------------|
-| Attention | 0.903 ± 0.078 | 0.971 ± 0.162 | **85.4%** |
-| LIME | 0.742 ± 0.124 | 0.957 ± 0.267 | 33.3% |
-| SHAP | 0.849 ± 0.080 | 0.991 ± 0.184 | 79.2% |
+| Attention | 0.901 ± 0.074 | 0.970 ± 0.167 | **89.6%** |
+| LIME | 0.721 ± 0.128 | 0.961 ± 0.262 | 45.8% |
+| SHAP | 0.797 ± 0.085 | 0.995 ± 0.193 | 77.1% |
 
 No method achieves 100%. LIME is the only one whose mean stability falls below the 0.80 threshold. Even the best method (Attention at 85.4%) fails on roughly 1 in 7 examples.
 
@@ -81,7 +81,7 @@ The easiest way is Google Colab (free T4 GPU):
 1. Go to [colab.research.google.com](https://colab.research.google.com)
 2. Upload `ExplainabilityAudit.ipynb`
 3. Set runtime to GPU: Runtime → Change runtime type → T4 GPU
-4. Run  1 to install dependencies, then run s in order
+4. Run Cell 1 to install dependencies, then run cells in order
 5. Full run takes about 35 minutes on T4
 
 Alternatively, run `Desetty_Explainability_Audit_Experiment.py` in any Python environment with the dependencies below.
@@ -97,7 +97,7 @@ pip install transformers datasets lime shap torch scikit-learn pandas numpy matp
 ## Repository structure
 
 ```
-ExplainabilityAudit/
+github.com/asleshadesetty/Explainability-Audit-
 ├── ExplainabilityAudit_Clean.ipynb    # Main notebook (run this in Colab)
 ├── Desetty_Explainability_Audit_Experiment.py  # Same code as .py script
 ├── explainability_audit_results.png   # Output figure from the experiments
@@ -112,27 +112,27 @@ ExplainabilityAudit/
 
 ## What the code does, step by step
 
-** 1** — installs dependencies
+**Cell 1** — installs dependencies
 
-** 2** — imports and setup (sets random seed for reproducibility)
+**Cell 2** — imports and setup (sets random seed for reproducibility)
 
-** 3** — loads MultiNLI government/slate genres from HuggingFace
+**Cell 3** — loads MultiNLI government/slate genres from HuggingFace
 
-** 4** — loads BGE-M3 via HuggingFace AutoModel, adds a lightweight classification head so LIME and SHAP can work with it
+**Cell 4** — loads BGE-M3 via HuggingFace AutoModel, adds a lightweight classification head so LIME and SHAP can work with it
 
-** 5** — defines `predict_proba`, the function that runs the model and returns class probabilities
+**Cell 5** — defines `predict_proba`, the function that runs the model and returns class probabilities
 
-** 6** — Experiment 1: stability. Generates perturbations, runs all three explanation methods, computes Spearman correlations
+**Cell 6** — Experiment 1: stability. Generates perturbations, runs all three explanation methods, computes Spearman correlations
 
-** 7** — Experiment 2: faithfulness. Keeps top-5 tokens from each method, measures confidence retention
+**Cell 7** — Experiment 2: faithfulness. Keeps top-5 tokens from each method, measures confidence retention
 
-** 8** — Experiment 3: audit readiness. Applies both thresholds, computes pass rates
+**Cell 8** — Experiment 3: audit readiness. Applies both thresholds, computes pass rates
 
-** 9** — Visualizations (three-panel figure saved as PNG)
+**Cell 9** — Visualizations (three-panel figure saved as PNG)
 
-** 10** — Prints the results table for the paper
+**Cell 10** — Prints the results table for the paper
 
-** 11** — Qualitative example showing one explanation per method
+**Cell 11** — Qualitative example showing one explanation per method
 
 ---
 
@@ -152,3 +152,6 @@ If you use this code or find the framing useful, please cite:
 
 ---
 
+## Contact
+
+asleshadesetty@outlook.com
