@@ -6,8 +6,7 @@
 
 This repository contains the code and data for the paper:
 
-> Desetty, J.A. (2026). *Bridging the Deployment Gap: Lessons from NLP and Predictive Modeling in Production Healthcare and Insurance Systems.* Preprint. [GitHub](https://github.com/asleshadesetty/Explainability-Audit-)
-
+> Desetty, J.A. (2026). *Bridging the Deployment Gap: Lessons from NLP and Predictive Modeling in Production Healthcare and Insurance Systems.* Preprint. 
 ---
 
 ## What this project is about
