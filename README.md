@@ -8,7 +8,7 @@ This repository contains the code and data for the paper:
 
 > Desetty, J.A. (2026). *Bridging the Deployment Gap: Lessons from NLP and Predictive Modeling in Production Healthcare and Insurance Systems.* Preprint. 
 zenodo: https://zenodo.org/records/20337277
-> 
+
 SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6811740
 ---
 
